@@ -9,7 +9,7 @@ else
     parted ${DEV} \ mklabel msdos \ mkpart primary 1 512M \ mkpart primary 512M 100% -s
     # format partitions
     mkfs.fat -F32 ${DEV}1
-    mkfs.btrfs ${DEV}2
+    mkfs.btrfs -f ${DEV}2
     # mount fs
     mount -o compress=zstd $DEV2 /mnt
     mkdir /mnt/boot
