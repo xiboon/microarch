@@ -15,5 +15,4 @@ rm -rf fsck.ext2 fsck.ext3
 rm -rf /var/cache
 rm -rf /var/log
 rm -rf ~/.cache
-pacman --noconfirm -R grub gettext less
-exit
+pacman --noconfirm -R grub gettext
