@@ -1,21 +1,19 @@
 #!/bin/bash
 DEV=/dev/vda
-DEV1=/dev/vda1
-DEV2=/dev/vda2
 HOSTNAME=kurwa
 if [ -e /sys/firmware/efi/efivars ]
 then
     echo "This script is not compatible with UEFI!"
 else
     # create partitions
-    parted $DEV \ mklabel msdos \ mkpart primary 1 512M \ mkpart primary 512M 100% -s
+    parted ${DEV} \ mklabel msdos \ mkpart primary 1 512M \ mkpart primary 512M 100% -s
     # format partitions
-    mkfs.fat -F32 $DEV1
-    mkfs.btrfs $DEV2
+    mkfs.fat -F32 ${DEV}1
+    mkfs.btrfs ${DEV}2
     # mount fs
     mount -o compress=zstd $DEV2 /mnt
     mkdir /mnt/boot
-    mount $DEV1 /mnt/boot
+    mount ${DEV}1 /mnt/boot
     # install needed packages
     pacstrap /mnt linux-hardened pacman dhcpcd sed nano systemd-sysvcompat pam btrfs-progs
     echo $HOSTNAME >> /mnt/etc/hostname
