@@ -18,7 +18,7 @@ else
     mkfs.fat -F32 ${DEV}1
     mkfs.btrfs -f ${DEV}2
     # mount fs
-    mount -o compress-force=zstd:13 ${DEV}2 /mnt
+    mount -o compress-force=zstd:15 ${DEV}2 /mnt
     mkdir /mnt/boot
     mkdir /mnt/etc
     mount ${DEV}1 /mnt/boot
