@@ -22,3 +22,5 @@ rm -rf /var/cache
 rm -rf /var/log
 rm -rf ~/.cache
 pacman --noconfirm -R grub gettext
+systemctl enable dhcpcd
+exit
