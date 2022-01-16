@@ -1,3 +1,3 @@
 #!/bin/bash
-pacman -S xfce lightdm xorg-server
+pacman --noconfirm -S xfce4 lightdm xorg-server
 systemctl enable lightdm
