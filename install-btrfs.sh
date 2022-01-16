@@ -25,8 +25,8 @@ HOOKS=(base udev autodetect modconf block filesystems fsck)" > /mnt/etc/mkinitcp
     echo $HOSTNAME >> /mnt/etc/hostname
     # generate a fstab and go to chroot
     genfstab -U /mnt >> /mnt/etc/fstab
-    chmod +x chroot-btrfs.sh
-    cp chroot-btrfs.sh /mnt
+    chmod +x chroot.sh
+    cp chroot.sh /mnt
     arch-chroot /mnt ./chroot.sh
     echo "Finished! You can now reboot, if there are any issues please report them on github."
 fi
