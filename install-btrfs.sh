@@ -1,4 +1,5 @@
 #!/bin/bash
+DEV=/dev/vda
 DEV1=/dev/vda1
 DEV2=/dev/vda2
 HOSTNAME=kurwa
@@ -7,7 +8,7 @@ then
     echo "This script is not compatible with UEFI!"
 else
     # create partitions
-    parted  \ mklabel msdos \ mkpart primary 1 512M \ mkpart primary 512M 100% -s
+    parted $DEV \ mklabel msdos \ mkpart primary 1 512M \ mkpart primary 512M 100% -s
     # format partitions
     mkfs.fat -F32 $DEV1
     mkfs.btrfs $DEV2
