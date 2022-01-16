@@ -1,6 +1,13 @@
 #!/bin/bash
-DEV=/dev/vda
+if [ -e /dev/vda ]
+then
+    DEV=/dev/vda
+else
+    DEV=/dev/sda
+fi
+
 HOSTNAME=kurwa
+
 if [ -e /sys/firmware/efi/efivars ]
 then
     echo "This script is not compatible with UEFI!"
