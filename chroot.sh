@@ -12,7 +12,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 passwd
 # remove all the useless stuf
 cd /usr/share
-rm -rf kb iana-etc zoneinfo file info man gettext doc gtk-doc hwdata bash-completion licenses gir-1.0 ca-certificates zoneinfo-leaps audit readline vala icu gettext nano fish factory aclocal 
+rm -rf kb iana-etc zoneinfo file info man gettext doc gtk-doc hwdata bash-completion zsh makepkg pixmaps glib-2.0 licenses gir-1.0 ca-certificates zoneinfo-leaps audit readline vala icu gettext nano fish factory aclocal 
 find locale ! -name en_US -delete
 rm -rf /boot/initramfs-linux-hardened-fallback.img
 find i18n/locales ! -name en_US -delete
