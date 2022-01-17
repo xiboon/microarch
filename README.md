@@ -6,10 +6,10 @@ a project that wants to make arch linux as compact as possible
 
 BTRFS
 
--   with xfce - 532M
+-   with xfce - 471M
 -   without xfce - 285M
 
 EXT4
 
--   with xfce - 1.1G
+-   with xfce - 1002M
 -   without xfce - 532M
