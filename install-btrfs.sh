@@ -24,9 +24,9 @@ else
     mount ${DEV}1 /mnt/boot
     # mkinitcpio
     echo "MODULES=(btrfs) \
-BINARIES=() \
-FILES=() \
-HOOKS=(base udev autodetect modconf block filesystems fsck)" > /mnt/etc/mkinitcpio.conf
+    BINARIES=() \
+    FILES=() \
+    HOOKS=(base udev autodetect modconf block filesystems fsck)" > /mnt/etc/mkinitcpio.conf
     # install needed packages
     pacstrap /mnt linux-hardened pacman dhcpcd sed nano systemd-sysvcompat pam btrfs-progs
     echo $HOSTNAME >> /mnt/etc/hostname
