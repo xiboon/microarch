@@ -5,7 +5,7 @@ then
 else
     DEV=/dev/sda
 fi
-pacman --noconfirm -S grub
+pacman --noconfirm -Sy grub
 # install grub
 grub-install --target=i386-pc --force $DEV
 grub-mkconfig -o /boot/grub/grub.cfg
